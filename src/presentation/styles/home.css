@@ -1,0 +1,30 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+.error {
+  color: #e63946;
+}

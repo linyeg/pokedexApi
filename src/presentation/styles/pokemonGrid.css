@@ -1,0 +1,55 @@
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+.pokemon-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-4px);
+}
+
+.pokemon-card img {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 12px;
+}
+
+.pokemon-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.pokemon-card p {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 4px 0;
+}
+
+
+.pokemon-card img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.pokemon-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+  color: #333;
+}
+
