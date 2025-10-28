@@ -6,7 +6,7 @@ A responsive and visually polished Pokédex web application built with React and
 
 ## Demo
 
-![Pokedex Screenshot](pokedx.png)  
+![Pokedex Screenshot](pokedex.png)  
 
 ---
 
