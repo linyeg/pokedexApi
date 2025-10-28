@@ -1,15 +1,13 @@
 // Importamos los hooks de React para manejar estado y efectos secundarios
+// Importamos la función que obtiene los datos de los Pokemon desde la API
+// Importamos el tipo de dato que representa un Pokemon
 import { useEffect, useState } from 'react';
-
-// Importamos la función que obtiene los datos de los Pokémon desde la API
 import { getPokemons } from '../../infrastructure/repositories/pokeRepository';
-
-// Importamos el tipo de dato que representa un Pokémon
 import { Pokemon } from '../../domain/models/pokemon';
 
-// Creamos un hook personalizado que se encarga de traer la lista de Pokémon
+// Creamos un hook personalizado que se encarga de traer la lista
 export const usePokemon = () => {
-  // Estado para guardar la lista de Pokémon
+  // Estado para guardar la lista
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
   // Estado para saber si los datos están cargando
@@ -20,25 +18,25 @@ export const usePokemon = () => {
 
   // Usamos useEffect para ejecutar la petición cuando el componente se monta
   useEffect(() => {
-    // Función asincrónica que trae los datos
-    const fetchData = async () => {
+    // Función asincronica que trae los datos
+    const getData = async () => {
       try {
-        // Llamamos a la función que obtiene los Pokémon
+        // Llamamos a la función que obtiene los Pokemon
         const data = await getPokemons();
 
         // Guardamos los datos en el estado
         setPokemons(data);
       } catch (err) {
-        // Si algo falla, guardamos un mensaje de error
-        setError('Error fetching Pokémon data');
+        // Si algo falla, mensaje de error
+        setError('Error al obtener los pokemones');
       } finally {
-        // Cuando termina (con éxito o error), cambiamos el estado de carga
+        // Cuando termina (exito o error), cambiamos el estado de carga
         setLoading(false);
       }
     };
 
     // Ejecutamos la función al montar el componente
-    fetchData();
+    getData();
   }, []);
 
   // Retornamos los datos y los estados para que se usen en el componente

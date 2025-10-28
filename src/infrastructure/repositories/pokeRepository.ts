@@ -2,16 +2,15 @@
 import { pokeApi } from '../../api/pokeApi';
 import { Pokemon } from '../../domain/models/pokemon';
 
-// Esta interfaz representa la estructura básica que devuelve la API en la primera llamada
-// Solo incluye el nombre y la URL para obtener más detalles de cada Pokémon
+// Es la estructura basica que devuelve la API en la primera llamada, solo incluye el nombre y la URL para obtener más detalles de cada uno 
 interface RawPokemon {
   name: string;
   url: string;
 }
 
-// Esta función obtiene una lista de Pokémon con sus datos completos
+// Esta función obtiene una lista de Pokemon con sus datos completos
 export const getPokemons = async (): Promise<Pokemon[]> => {
-  // Hacemos una petición a la PokéAPI para obtener los primeros 20 Pokémon
+  // Hacemos una petición a la PokeAPI para obtener los primeros 20
   const response = await pokeApi.get('/pokemon?limit=20');
 
   // Guardamos la lista
@@ -20,7 +19,7 @@ export const getPokemons = async (): Promise<Pokemon[]> => {
   // varias peticiones al mismo tiempo
   const detailedList = await Promise.all(
     rawList.map(async (p) => {
-      // Hacemos una petición a la URL de cada Pokémon para obtener sus datos completos
+      // Hacemos una petición a la URL de cada Pokemon para obtener sus datos completos
       const res = await pokeApi.get(p.url);
 
       // Retornamos solo los datos que necesitamos para mostrar en la app

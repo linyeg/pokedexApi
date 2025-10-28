@@ -1,10 +1,10 @@
-// Importamos el hook personalizado que trae los datos de los Pokémon
+// Importamos el hook personalizado que trae los datos de los Pokemon
 import { usePokemon } from '../../applications/useCases/usePokemon';
 import PokemonCard from '../components/PokemonCard';
 import '../styles/home.css';
 import '../styles/pokemonGrid.css';
 const Home = () => {
-  // Usamos el hook para obtener la lista de Pokémon, y también el estado de carga y errores
+  // Usamos el hook para obtener la lista de Pokemon, y también el estado de carga y errores
   const { pokemons, loading, error } = usePokemon();
 // Si todavía está cargando, mostramos un mensaje
   if (loading) return <p className="loading">Cargando...</p>;
@@ -18,7 +18,7 @@ const Home = () => {
   {/* Contenedor de las tarjetas en forma de cuadrícula */}
   <div className="pokemon-grid">
     {pokemons.map(p => (
-      // Mostramos cada Pokémon con su información
+      // Mostramos cada Pokemon con su información
       <PokemonCard
         key={p.name}
         name={p.name}

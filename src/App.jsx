@@ -1,4 +1,4 @@
-//--- Aquí es donde se muestra la lista de Pokémon
+//--- Aquí es donde se muestra la lista de Pokemon
 
 
 import Home from './presentation/pages/Home';
